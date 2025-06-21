@@ -143,14 +143,18 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Enabling AI systems to reason like humans is crucial for effective interaction in virtual 3D world. 
-            Although recent approaches support natural language-based interaction with 3D scenes, 
-            they remain limited in understanding implicit user intentions. 
-            The advent of Large Vision-Language Models (LVLMs) has shown great promise in achieving robust visual-language understanding. 
-            Inspired by this, we propose \textbf{REALM}, a unified LVLM-guided 3D world reasoning framework that enables diverse interaction capabilities, 
-            including segmentation, object removal, replacement, and style transfer. Given a user instruction, with the assist of LVLM, 
-            REALM autonomously interprets the underlying intent, identifies the most appropriate operation from REALM-toolkit, 
-            and applies it to the target object in the 3D scene accordingly.
+            Humans effortlessly describe and interact with the 3D world using natural language. 
+            Bridging this capability to artificial intelligence (AI) remains a significant challenge, 
+            particularly due to the under-specified and context-dependent nature of human instructions. 
+            In this paper, we introduce REALM, a novel framework that enables large vision-language models (LVLMs) to perform 3D reasoning and interaction. 
+            Built upon 3D Gaussian Splatting (3DGS), REALM lifts image-level reasoning to 3D space by combining a LVLM-based Visual Segmenter (LVSeg) 
+            with a hierarchical Global-to-Local Grouping (GLGroup) strategy. 
+            LVSeg leverages the semantic priors of LVLMs to generate reasoning-aware 2D masks, 
+            which are then propagated and refined in 3D via GLGroup. This design enables REALM to reason about spatial relationships, 
+            resolve ambiguous descriptions, and understand contextual cues across views. 
+            Furthermore, REALM supports a range of 3D interaction tasks, including object removal, replacement, and style transfer. 
+            Extensive experiments demonstrate that REALM significantly outperforms current methods on a variety of datasets, 
+            showcasing the potential of LVLMs in understanding complex 3D scenes. 
           </p>
         </div>
       </div>
