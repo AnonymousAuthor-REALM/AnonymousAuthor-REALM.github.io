@@ -66,7 +66,9 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">REALM: Reasoning Any 3D Scenes with LVLM</h1>
+          <h1 class="title is-1 publication-title"><h1 class="title is-1 publication-title title-no-wrap">
+            REALM: Reasoning Any 3D Scenes with LVLM
+          </h1></h1>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -118,23 +120,20 @@
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <div class="content has-text-justified">
+        <div class="content has-text-centered">
           <p>
-            <b>TL;DR:</b> We ground CLIP features into a set of 3D language Gaussians, which attains precise 3D language fields while being <font color="red"><b>199 &times;</b></font> faster than LERF.
+            REALM leverages the knowledge of an LVLM to perform open-vocabulary 3D semantic segmentation.
           </p>
         </div>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/XMlyjsei-Es?si=hOpMwKxk8efjEw_z"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="publication-figure">
+          <img src="./static/images/project_video.png"
+               alt="REALM 3D Semantic Segmentation Example"
+               style="width: 100%; max-width: 800px; margin: 0 auto;">
         </div>
       </div>
     </div>
     <!--/ Paper video. -->
-  </div>
 </section>
-
-
-
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -144,23 +143,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Human lives in a 3D world and commonly uses natural language to interact with a 3D scene. 
-            Modeling a 3D language field to support open-ended language queries in 3D has gained increasing 
-            attention recently. This paper introduces LangSplat, which constructs a 3D language field that 
-            enables precise and efficient open-vocabulary querying within 3D spaces. Unlike existing methods 
-            that ground CLIP language embeddings in a NeRF model, LangSplat advances the field by utilizing a 
-            collection of 3D Gaussians, each encoding language features distilled from CLIP, to represent the 
-            language field. By employing a tile-based splatting technique for rendering language features, we 
-            circumvent the costly rendering process inherent in NeRF. Instead of directly learning CLIP embeddings, 
-            LangSplat first trains a scene-wise language autoencoder and then learns language features on the 
-            scene-specific latent space, thereby alleviating substantial memory demands imposed by explicit 
-            modeling. Existing methods struggle with imprecise and vague 3D language fields, which fail to 
-            discern clear boundaries between objects. We delve into this issue and propose to learn hierarchical 
-            semantics using SAM, thereby eliminating the need for extensively querying the language field across 
-            various scales and the regularization of DINO features. Extensive experiments on open-vocabulary 3D 
-            object localization and semantic segmentation demonstrate that LangSplat significantly outperforms the 
-            previous state-of-the-art method LERF. Notably, LangSplat is extremely efficient, achieving a <font color="red"><b>199 &times;</b></font> 
-            speedup compared to LERF.
+            Enabling AI systems to reason like humans is crucial for effective interaction in virtual 3D world. 
+            Although recent approaches support natural language-based interaction with 3D scenes, 
+            they remain limited in understanding implicit user intentions. 
+            The advent of Large Vision-Language Models (LVLMs) has shown great promise in achieving robust visual-language understanding. 
+            Inspired by this, we propose \textbf{REALM}, a unified LVLM-guided 3D world reasoning framework that enables diverse interaction capabilities, 
+            including segmentation, object removal, replacement, and style transfer. Given a user instruction, with the assist of LVLM, 
+            REALM autonomously interprets the underlying intent, identifies the most appropriate operation from REALM-toolkit, 
+            and applies it to the target object in the 3D scene accordingly.
           </p>
         </div>
       </div>
@@ -168,13 +158,13 @@
     <!--/ Abstract. -->
 </section>
 
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h3 class="title is-4">Visualization of learned features</h3>
-      
+        <h3 class="title is-4">3D Reasoning Segmentation Results</h3>
+
+        <!--
         <div class="content has-text-centered">
           <video id="replay-video"
                   controls
@@ -186,6 +176,9 @@
                     type="video/mp4">
           </video>
         </div>
+        -->
+
+        <!--
         <div class="content has-text-centered">
           <video id="replay-video"
                   controls
@@ -197,6 +190,9 @@
                     type="video/mp4">
           </video>
         </div>
+        -->
+
+        <!--
         <div class="content has-text-centered">
           <video id="replay-video"
                   controls
@@ -208,6 +204,9 @@
                     type="video/mp4">
           </video>
         </div>
+        -->
+
+        <!--
         <div class="content has-text-centered">
           <video id="replay-video"
                   controls
@@ -219,22 +218,22 @@
                     type="video/mp4">
           </video>
         </div>
+        -->
 
         <div class="hero-body">
-          <img src="./static/images/teaser.png"/>
+          <img src="./static/images/3dreasonseg.png"/>
         </div>
         <div class="content has-text-justified">
           <p>
-            Visualization of learned features of the previous SOTA method LERF and 
-            our LangSplat. LangSplat grounds CLIP features into a set of 3D Language 
-            Gaussians to construct a 3D language field. While LERF generates imprecise 
-            and vague 3D features, our LangSplat accurately captures object boundaries 
-            and provides precise 3D language fields without any post-processing. While 
-            being effective, our LangSplat is also <font color="red"><b>199 &times;</b></font> faster than LERF at the 
-            resolution of 1440 &times; 1080.
+            Visualization of the 3D reasoning segmentation results of our method REALM and previous methods. 
+            When faced with <font color="red"><b>implicit instructions</b></font>, REALM accurately identifies the target 3D objects.
+            
           </p>
         </div>
-        <h3 class="title is-4">Open-vocabulary 3D Query</h3>
+
+        <!-- <h3 class="title is-4">Open-vocabulary 3D Query</h3> -->
+
+        <!--
         <div class="content has-text-centered">
           <video id="replay-video"
                   controls
@@ -246,6 +245,9 @@
                     type="video/mp4">
           </video>
         </div>
+        -->
+
+        <!--
         <div class="content has-text-centered">
           <video id="replay-video"
                   controls
@@ -257,7 +259,9 @@
                     type="video/mp4">
           </video>
         </div>
-        <div class="hero-body">
+        -->
+
+        <!-- <div class="hero-body">
           <img src="./static/images/localization.png"/>
         </div>
         <div class="hero-body">
@@ -267,8 +271,11 @@
           <p>
             Our LangSplat is able to focus more precisely on the queried object.
           </p>
-        </div>
-        <h3 class="title is-4">Open-vocabulary 3D Semantic Segmentation</h3>
+        </div> -->
+
+        <h3 class="title is-4">Ablation Study on Local Refinement Steps</h3>
+
+        <!--
         <div class="content has-text-centered">
           <video id="replay-video"
                   controls
@@ -280,6 +287,9 @@
                     type="video/mp4">
           </video>
         </div>
+        -->
+
+        <!--
         <div class="content has-text-centered">
           <video id="replay-video"
                   controls
@@ -291,13 +301,14 @@
                     type="video/mp4">
           </video>
         </div>
+        -->
+
         <div class="hero-body">
-          <img src="./static/images/semantic_segmentation.png"/>
+          <img src="./static/images/refiningsteps.png"/>
         </div>
         <div class="content has-text-justified">
           <p>
-            Our method is <font color="red"><b>199 &times;</b></font> faster than LERF at 1440*1080 resolution.<br>
-            Prior to any text query, our language field already exhibits precise 3D object boundaries.
+            The local refinement is designed to improve the quality of the output. It refines the complete 3D object mask in just <font color="red"><b>50</b></font>  steps.
           </p>
         </div>
       </div>
